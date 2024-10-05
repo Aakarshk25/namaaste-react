@@ -30,12 +30,53 @@
  */
 
 // imported react and reactdom from nodemodule folder
-import React from "react";
-import ReactDOM from "react-dom/client";
-const heading = React.createElement("h1", { id: "heading" }, "Nmaste Aakarsh");
-// jsx - html -like or xml like syntax
-const jsxHeading =( <h1 className="heading">Namaste hiie jsx </h1>);
+// import React from "react";
+// import ReactDOM from "react-dom/client";
+// const heading = React.createElement("h1", { id: "heading" }, "Nmaste Aakarsh");
+// // jsx - html -like or xml like syntax
+// const jsxHeading =( <h1 className="heading">Namaste hiie jsx </h1>);
+// const root = ReactDOM.createRoot(document.getElementById("root"));
+// // to display in the browser that whuy we are using reactDOM
+// root.render(heading);
+// // root.render(jsxHeading); // Aak bar me aak hi chiz render krwa skte hai
+
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+
+// A component without return (implicit return)
+const Tomp = () => <h1>without return</h1>;
+
+const number = 10000;
+
+// Functional component using return
+const Comp = function () {
+  return (
+    <div className="head">
+      <h1>Functional component using return</h1>
+    </div>
+  );
+};
+
+// Rendering all components properly
+const Zomp = () => (
+  <div  id="container">
+    {number}
+    <Tomp />
+    {Comp()}
+    <h1>All things are rendering here without return, and JS also works!</h1>
+  </div>
+);
+
+// Fixed Komp component with proper JSX
+const Komp = () => (
+  <h1 className="head">
+    <Tomp />
+    Rendering the Tomp component inside Komp
+  </h1>
+);
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
-// to display in the browser that whuy we are using reactDOM
-root.render(heading);
-// root.render(jsxHeading); // Aak bar me aak hi chiz render krwa skte hai
+
+// Rendering the Komp component in the browser
+root.render(<Zomp />);
+
