@@ -70,7 +70,7 @@ const Zomp = () => (
 // Fixed Komp component with proper JSX
 const Komp = () => (
   <h1 className="head">
-    <Tomp />
+        <Tomp ></Tomp>
     Rendering the Tomp component inside Komp
   </h1>
 );
